@@ -1,1 +1,0 @@
-# fhirschmann.github.io
