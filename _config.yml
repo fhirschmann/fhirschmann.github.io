@@ -1,0 +1,21 @@
+title: Fabian Hirschmann
+url: "https://ankitsultana.com"
+baseurl: ""
+
+markdown: kramdown
+
+tracking_id: #
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+nav:
+ - name: "About"
+   link: "/"
+ - name: "Projects"
+   link: "projects"
+ - name: "Publications"
+   link: "publications"
+ - name: "Legal Notice"
+   link: "legal"
