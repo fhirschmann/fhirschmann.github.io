@@ -5,7 +5,7 @@ is_contact: true
 
 * Email: [fabian@hirschmann.email](mailto:fabian@hirschmann.email)
 
-* Phone: [+91-123123](tel:+49 176 3455 7200)
+* Phone: [+49 176 3455 7200](tel:+49 176 3455 7200)
 
 ---
 
