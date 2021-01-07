@@ -6,7 +6,7 @@ layout: default
 
 <img class="profile-picture" src="me.jpg">
 
-I'm currently a senior data scientist at [ING](https://ing.com) Germany working primarily in the field of process automation and innovation using machine learning.
+I'm currently working for [Amazon Web Services (AWS)](https://aws.amazon.com) as machine learning specialist.
 
 ## Social
 
