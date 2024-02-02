@@ -6,7 +6,7 @@ layout: default
 
 <img class="profile-picture" src="me.jpg">
 
-I'm currently working for [Amazon Web Services (AWS)](https://aws.amazon.com) as machine learning specialist.
+I'm currently working for [Google](https://google.com) as machine learning specialist.
 
 ## Social
 
