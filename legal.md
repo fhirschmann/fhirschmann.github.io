@@ -3,21 +3,6 @@ layout: default
 is_contact: true
 ---
 
-* Email: [fabian@hirschmann.email](mailto:fabian@hirschmann.email)
-
-* Phone: [+49 176 3455 7200](tel:+49 176 3455 7200)
-
----
-
-## Mailing Address
-
-> Hellerhofstr. 21
->
-> 60327 Frankfurt am Main
->
-> Germany
-
----
 
 ## Datenschutzerklärung
 
