@@ -1,0 +1,18 @@
+{
+  "name": "fhirschmann.github.io",
+  "version": "2.0.0",
+  "description": "Personal website of Fabian Hirschmann",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.0",
+    "@fontsource/press-start-2p": "^5.2.7",
+    "@fontsource/vt323": "^5.2.7",
+    "astro": "^5.0.0"
+  }
+}

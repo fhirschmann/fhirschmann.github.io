@@ -1,0 +1,51 @@
+---
+import '@fontsource/press-start-2p';
+import '@fontsource/vt323';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+}
+
+const { title, description, lang = 'en' } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL('/me.jpg', Astro.site)} />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="wrap">
+        <a class="brand" href="/">[fabian@hirschmann <span class="path">~</span>]$</a>
+        <nav class="site-nav">
+          <a href="/#contact">contact</a>
+          <a href="/legal">legal</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <span>© {year} fabian hirschmann — EOF</span>
+        <span>no cookies · no tracking · <a href="/legal">legal notice</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

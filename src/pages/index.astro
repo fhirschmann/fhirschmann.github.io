@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+
+const contacts = [
+  { label: 'github', handle: 'github.com/fhirschmann', href: 'https://github.com/fhirschmann' },
+  { label: 'linkedin', handle: 'linkedin.com/in/fhirschmann', href: 'https://linkedin.com/in/fhirschmann' },
+  { label: 'xing', handle: 'xing.com/profile/Fabian_Hirschmann2', href: 'https://www.xing.com/profile/Fabian_Hirschmann2' },
+  { label: 'email', handle: 'fabian@hirschmann.email', href: 'mailto:fabian@hirschmann.email' },
+];
+---
+
+<Base
+  title="Fabian Hirschmann — Machine Learning at Google"
+  description="Fabian Hirschmann is a machine learning specialist working at Google."
+>
+  <main class="wrap">
+    <section class="hero">
+      <figure class="portrait reveal" style="--d:.5s">
+        <img src="/me-pixel.jpg" alt="Pixelated portrait of Fabian Hirschmann" width="64" height="58" />
+        <figcaption>me.jpg — 64×58 px</figcaption>
+      </figure>
+
+      <p class="bootline reveal" style="--d:.1s">
+        &gt; boot sequence complete<br />
+        &gt; all systems <b>operational</b>
+      </p>
+
+      <h1 class="reveal" style="--d:.25s">
+        Fabian<br />Hirschmann<span class="cursor">▮</span>
+      </h1>
+
+      <p class="whoami reveal" style="--d:.4s">
+        <span class="ps1">$ whoami</span>
+        <span class="out">machine learning specialist @ <a href="https://google.com" rel="noopener">google</a></span>
+      </p>
+    </section>
+
+    <section id="contact" class="section reveal" style="--d:.65s">
+      <p class="section-cmd">$ ls -la ./contact</p>
+      <div class="section-head">
+        <span class="index"></span>
+        <h2>Contact</h2>
+      </div>
+      <ul class="rows">
+        {
+          contacts.map((c, i) => (
+            <li>
+              <a class="row" href={c.href} target="_blank" rel="noopener">
+                <span class="row-num">-rw-</span>
+                <span class="row-title">{c.label}</span>
+                <span class="row-meta">{c.handle}</span>
+                <span class="row-arrow">[↗]</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Base>
