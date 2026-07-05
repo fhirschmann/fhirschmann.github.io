@@ -5,7 +5,6 @@ const contacts = [
   { label: 'github', handle: 'github.com/fhirschmann', href: 'https://github.com/fhirschmann' },
   { label: 'linkedin', handle: 'linkedin.com/in/fhirschmann', href: 'https://linkedin.com/in/fhirschmann' },
   { label: 'xing', handle: 'xing.com/profile/Fabian_Hirschmann2', href: 'https://www.xing.com/profile/Fabian_Hirschmann2' },
-  { label: 'email', handle: 'fabian@hirschmann.email', href: 'mailto:fabian@hirschmann.email' },
 ];
 ---
 
@@ -54,7 +53,43 @@ const contacts = [
             </li>
           ))
         }
+        <li>
+          <a class="row" id="email-row">
+            <span class="row-num">-rw-</span>
+            <span class="row-title">email</span>
+            <span class="row-meta" id="email-meta">[ encrypted — javascript required ]</span>
+            <span class="row-arrow">[↗]</span>
+          </a>
+        </li>
       </ul>
     </section>
   </main>
+
+  <script>
+    // Assemble the address at runtime from char codes so neither the address
+    // nor readable fragments of it end up in the served HTML/JS (a plain
+    // String.fromCharCode(64) would get constant-folded to "@" by the bundler).
+    const codes = [102, 97, 98, 105, 97, 110, 64, 104, 105, 114, 115, 99, 104, 109, 97, 110, 110, 46, 101, 109, 97, 105, 108];
+    const addr = codes.map((c) => String.fromCharCode(c)).join('');
+    const row = document.getElementById('email-row') as HTMLAnchorElement;
+    const meta = document.getElementById('email-meta')!;
+    row.href = 'mailto:' + addr;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      meta.textContent = addr;
+    } else {
+      const glyphs = '01#$%&?!<>[]{}=*';
+      let frame = 0;
+      const frames = 16;
+      const tick = () => {
+        frame++;
+        const solved = Math.floor((frame / frames) * addr.length);
+        meta.textContent =
+          addr.slice(0, solved) +
+          Array.from({ length: addr.length - solved }, () => glyphs[(Math.random() * glyphs.length) | 0]).join('');
+        if (solved < addr.length) setTimeout(tick, 40);
+      };
+      tick();
+    }
+  </script>
 </Base>
