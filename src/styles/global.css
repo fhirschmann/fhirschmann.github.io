@@ -356,6 +356,14 @@ a {
   color: var(--text);
 }
 
+.section-note {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: -0.4rem 0 1.2rem;
+}
+
 /* terminal listing rows */
 .rows {
   list-style: none;
@@ -410,6 +418,25 @@ a {
 .row:hover .row-meta,
 .row:hover .row-arrow {
   color: var(--bg);
+}
+
+/* amber status flag for archived / unmaintained projects */
+.stale {
+  color: #d9a441;
+  white-space: nowrap;
+}
+
+.row:hover .stale {
+  color: var(--bg);
+}
+
+/* optional description line beneath a listing row (projects) */
+.row-desc {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--muted);
+  padding: 0.4rem 1rem 0.95rem;
 }
 
 /* ---------- footer ------------------------------------------------- */

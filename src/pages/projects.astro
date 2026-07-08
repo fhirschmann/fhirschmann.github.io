@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+
+const projects = [
+  {
+    name: 'unraid-passkey',
+    meta: 'PHP · 2026',
+    href: 'https://github.com/fhirschmann/unraid-passkey',
+    desc: "Adds passwordless passkey (WebAuthn) login to the Unraid web GUI — self-contained in Unraid's own nginx/PHP stack, with no cloud service, Docker container, or OIDC provider involved.",
+  },
+  {
+    name: 'leoino',
+    meta: 'C++ · 2026',
+    href: 'https://github.com/fhirschmann/leoino',
+    desc: 'An ESP32 music player driven entirely by RFID tags — tap a card and a playlist starts, no screen or buttons needed.',
+  },
+  {
+    name: 'knitron',
+    meta: 'R · 2014–2016',
+    status: 'archived',
+    href: 'https://github.com/fhirschmann/knitron',
+    desc: "Lets knitr reports run Python: it executes IPython code chunks and embeds the resulting matplotlib figures right inside R's dynamic-report workflow.",
+  },
+  {
+    name: 'rdp',
+    meta: 'Python · 2014–2016',
+    status: 'archived',
+    href: 'https://github.com/fhirschmann/rdp',
+    desc: 'An implementation of the Ramer–Douglas–Peucker algorithm — simplifies a curve by dropping points that barely change its shape, handy for thinning GPS tracks and polylines.',
+  },
+  {
+    name: 'Flask-FlatPages-Knitr',
+    meta: 'Python · 2014–2015',
+    status: 'archived',
+    href: 'https://github.com/fhirschmann/Flask-FlatPages-Knitr',
+    desc: 'A Flask-FlatPages preprocessor that runs each page through knitr first, so embedded code chunks are executed and their output baked in before rendering.',
+  },
+  {
+    name: 'Flask-FlatPages-Pandoc',
+    meta: 'Python · 2014–2015',
+    status: 'archived',
+    href: 'https://github.com/fhirschmann/Flask-FlatPages-Pandoc',
+    desc: 'An HTML renderer for Flask-FlatPages backed by pandoc, letting flat pages be authored in Markdown, reStructuredText, or anything else pandoc can read.',
+  },
+  {
+    name: 'sleeptimer',
+    meta: 'C · 2013',
+    status: 'archived',
+    href: 'https://github.com/fhirschmann/sleeptimer',
+    desc: 'A countdown shutdown timer with an on-screen display, armed from a single infrared-remote or keyboard key — LIRC-aware, so you can trigger it from the couch.',
+  },
+  {
+    name: 'vohttp',
+    meta: 'Lua · 2013',
+    status: 'archived',
+    href: 'https://github.com/fhirschmann/vohttp',
+    desc: "An HTTP library and mini web framework for the game Vendetta Online, serving dynamic web pages over the game's in-client TCP sockets.",
+  },
+  {
+    name: 'clozegen',
+    meta: 'Java · 2012–2014',
+    status: 'unmaintained',
+    href: 'https://github.com/fhirschmann/clozegen',
+    desc: 'Generates cloze (fill-in-the-blank) exercises for language learners, using Apache UIMA to analyze real text and decide which words to blank out.',
+  },
+  {
+    name: 'penchy',
+    meta: 'Python · 2011–2012',
+    status: 'archived',
+    href: 'https://github.com/fhirschmann/penchy',
+    desc: 'Automates benchmarking of Java virtual machines — coordinates the runs and funnels their results through a configurable processing pipeline.',
+  },
+];
+---
+
+<Base
+  title="Projects — Fabian Hirschmann"
+  description="Personal open-source and hobby projects by Fabian Hirschmann."
+>
+  <main class="wrap">
+    <p class="section-cmd reveal" style="--d:0s; margin-top: 2.2rem;">$ ls -la ~/projects</p>
+    <h1 class="page-title reveal" style="--d:.1s; margin-top: 0;">Projects</h1>
+    <p class="section-note reveal" style="--d:.15s"># personal open-source &amp; hobby projects — built for fun, provided as-is</p>
+
+    <ul class="rows reveal" style="--d:.2s; margin-bottom: clamp(2.5rem, 7vh, 4.5rem);">
+      {
+        projects.map((p) => (
+          <li>
+            <a class="row" href={p.href} target="_blank" rel="noopener">
+              <span class="row-num">drwx</span>
+              <span class="row-title">{p.name}</span>
+              <span class="row-meta">
+                {p.meta}
+                {p.status && <span class="stale"> [{p.status}]</span>}
+              </span>
+              <span class="row-arrow">[↗]</span>
+            </a>
+            <p class="row-desc">{p.desc}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
