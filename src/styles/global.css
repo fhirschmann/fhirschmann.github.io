@@ -529,13 +529,20 @@ a {
 
 /* ---------- entrance ----------------------------------------------- */
 
+/* Content must stay visible without the animation: iOS Safari sometimes
+   drops delayed animations around page load, so hiding via base opacity
+   plus fill-forwards would leave elements permanently invisible. Hide
+   only through the backwards fill instead — a dropped animation then
+   fails visible, not blank. */
 .reveal {
-  opacity: 0;
-  animation: boot 0.05s steps(1) forwards;
+  animation: boot 0.05s steps(1) both;
   animation-delay: var(--d, 0s);
 }
 
 @keyframes boot {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
