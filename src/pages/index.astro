@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import ProjectRows from '../components/ProjectRows.astro';
+import { projects, archived } from '../data/projects';
 ---
 
 <Base
@@ -28,7 +30,19 @@ import Base from '../layouts/Base.astro';
       </p>
     </section>
 
-    <section id="contact" class="section reveal" style="--d:.55s">
+    <section id="projects" class="section reveal" style="--d:.55s">
+      <p class="section-cmd">$ ls -la ./projects</p>
+      <div class="section-head">
+        <span class="index"></span>
+        <h2>Projects</h2>
+      </div>
+      <ProjectRows projects={projects} />
+      <p class="section-more">
+        # + {archived.length} archived projects in <a href="/projects#archived">./projects/.archive</a>
+      </p>
+    </section>
+
+    <section id="contact" class="section reveal" style="--d:.65s">
       <p class="section-cmd">$ ls -la ./contact</p>
       <div class="section-head">
         <span class="index"></span>

@@ -1,0 +1,31 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  projects: Project[];
+  perms?: string;
+  class?: string;
+  style?: string;
+}
+
+const { projects, perms = 'drwx', class: className, style } = Astro.props;
+---
+
+<ul class:list={['rows', className]} style={style}>
+  {
+    projects.map((p) => (
+      <li>
+        <a class="row" href={p.href} target="_blank" rel="noopener">
+          <span class="row-num">{perms}</span>
+          <span class="row-title">{p.name}</span>
+          <span class="row-meta">
+            {p.meta}
+            {p.status && <span class="stale"> [{p.status}]</span>}
+          </span>
+          <span class="row-arrow">[↗]</span>
+        </a>
+        <p class="row-desc">{p.desc}</p>
+      </li>
+    ))
+  }
+</ul>

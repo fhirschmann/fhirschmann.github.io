@@ -439,6 +439,26 @@ a {
   padding: 0.4rem 1rem 0.95rem;
 }
 
+/* "more below" pointer under a listing (home → archived projects) */
+.section-more {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.section-more a {
+  color: var(--cyan);
+  border-bottom: 1px solid var(--cyan);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.section-more a:hover {
+  color: var(--magenta);
+  border-color: var(--magenta);
+}
+
 /* ---------- footer ------------------------------------------------- */
 
 .site-foot {
