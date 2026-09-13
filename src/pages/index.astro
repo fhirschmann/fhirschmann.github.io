@@ -2,9 +2,6 @@
 import Base from '../layouts/Base.astro';
 import ProjectRows from '../components/ProjectRows.astro';
 import { projects, archived } from '../data/projects';
-
-// Home only shows maintained projects; flagged ones (e.g. unmaintained) stay on /projects.
-const maintained = projects.filter((p) => !p.status);
 ---
 
 <Base
@@ -39,7 +36,7 @@ const maintained = projects.filter((p) => !p.status);
         <span class="index"></span>
         <h2>Projects</h2>
       </div>
-      <ProjectRows projects={maintained} />
+      <ProjectRows projects={projects} />
       <p class="section-more">
         # + {archived.length} archived projects in <a href="/projects#archived">./projects/.archive</a>
       </p>

@@ -20,16 +20,9 @@ export const projects: Project[] = [
     href: 'https://github.com/fhirschmann/leoino',
     desc: 'An ESP32 music player driven entirely by RFID tags — tap a card and a playlist starts, no screen or buttons needed.',
   },
-  {
-    name: 'clozegen',
-    meta: 'Java · 2012–2014',
-    status: 'unmaintained',
-    href: 'https://github.com/fhirschmann/clozegen',
-    desc: 'Generates cloze (fill-in-the-blank) exercises for language learners, using Apache UIMA to analyze real text and decide which words to blank out.',
-  },
 ];
 
-// Repositories archived (read-only) on GitHub — listed in their own section on /projects.
+// No longer maintained — listed in their own section on /projects.
 export const archived: Project[] = [
   {
     name: 'knitron',
@@ -54,6 +47,12 @@ export const archived: Project[] = [
     meta: 'Python · 2014–2015',
     href: 'https://github.com/fhirschmann/Flask-FlatPages-Pandoc',
     desc: 'An HTML renderer for Flask-FlatPages backed by pandoc, letting flat pages be authored in Markdown, reStructuredText, or anything else pandoc can read.',
+  },
+  {
+    name: 'clozegen',
+    meta: 'Java · 2012–2014',
+    href: 'https://github.com/fhirschmann/clozegen',
+    desc: 'Generates cloze (fill-in-the-blank) exercises for language learners, using Apache UIMA to analyze real text and decide which words to blank out.',
   },
   {
     name: 'sleeptimer',
